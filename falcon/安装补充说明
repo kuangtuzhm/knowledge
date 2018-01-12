@@ -1,0 +1,2 @@
+1:安装dashboard时用下边这个镜像地址。原先的./env/bin/pip install -r pip_requirements.txt -i https://pypi.douban.com/simple 有问题
+./env/bin/pip install -r pip_requirements.txt -i https://pypi.mirrors.ustc.edu.cn/simple/
