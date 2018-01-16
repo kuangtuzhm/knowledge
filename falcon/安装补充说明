@@ -3,3 +3,7 @@ http://book.open-falcon.org/zh_0_2
 
 1:安装dashboard时用下边这个镜像地址。原先的./env/bin/pip install -r pip_requirements.txt -i https://pypi.douban.com/simple 有问题
 ./env/bin/pip install -r pip_requirements.txt -i https://pypi.mirrors.ustc.edu.cn/simple/
+
+
+也可以参考其他安装文档
+https://note.youdao.com/share/?id=f06a172754570c5a2a502a502ce117c1&type=note#/
