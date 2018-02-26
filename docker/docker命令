@@ -1,0 +1,20 @@
+http://blog.csdn.net/u010246789/article/details/53958662
+
+1：进入docker容器
+docker exec -it webserver-nginx-v3 bash
+2：启动容器
+docker run --name webserver-nginx-v3 -d -p 80:80 nginx:v3
+或
+docker start docker_run，或者ID：docker start 43e3fef2266c
+3：停止容器
+docker stop [NAME]/[CONTAINER ID]:将容器退出。
+docker kill [NAME]/[CONTAINER ID]:强制停止一个容器。
+4：删除
+容器终止后，在需要的时候可以重新启动，确定不需要了，可以进行删除操作。
+docker rm [NAME]/[CONTAINER ID]:不能够删除一个正在运行的容器，会报错。需要先停止容器。 
+
+一次性删除：docker本身没有提供一次性删除操作，但是可以使用如下命令实现：
+docker rm 'docker ps -a -q'：-a标志列出所有容器，-q标志只列出容器的ID，然后传递给rm命令，依次删除容器。
+
+5：构建镜像
+docker build -t nginx:v3 .
