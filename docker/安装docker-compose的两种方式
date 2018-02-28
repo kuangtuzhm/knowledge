@@ -1,0 +1,24 @@
+http://blog.csdn.net/gsying1474/article/details/52988784
+
+
+这里简单介绍下两种安装docker-compose的方式，第一种方式相对简单，但是由于网络问题，常常安装不上，并且经常会断开，第二种方式略微麻烦，但是安装过程比较稳定
+方法一：
+# curl -L https://github.com/docker/compose/releases/download/1.8.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose 
+# chmod +x /usr/local/bin/docker-compose
+查看版本信息
+# docker-compose --version
+但是此方法会经常因为网络的原因而无法安装
+
+
+方法二：
+
+1、安装python-pip
+
+yum -y install epel-release
+yum -y install python-pip
+
+2、安装docker-compose
+
+pip install docker-compose
+待安装完成后，执行查询版本的命令，即可安装docker-compose
+docker-compose version
