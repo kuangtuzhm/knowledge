@@ -1,5 +1,8 @@
 http://blog.csdn.net/u010246789/article/details/53958662
 
+启动
+systemctl start docker.service
+
 1：进入docker容器
 docker exec -it webserver-nginx-v3 bash
 2：启动容器
