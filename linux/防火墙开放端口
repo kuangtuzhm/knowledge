@@ -1,3 +1,8 @@
+centos7
+http://blog.csdn.net/sodino/article/details/52356472
+
+centos6：如下
+
 查看状态:
 iptables -L -n
 下面添加对特定端口开放的方法：
