@@ -1,0 +1,7 @@
+https://blog.csdn.net/luck_zz/article/details/80341693
+
+第6步
+cp support-files/mysql.server /etc/init.d/mysqld 
+之后修改其中的
+basedir=/data/soft/mysql
+datadir=/home/data/mysql/data
