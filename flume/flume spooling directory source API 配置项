@@ -1,0 +1,68 @@
+https://blog.csdn.net/wenxindiaolong061/article/details/80365120
+
+
+
+首要注意，避免一个文件同时被读写（被其它程序编辑的同时，被flume读取）
+
+配置项及其含义
+Property Name	Default	Description
+channels	–	
+type	–	The component type name, needs to be spooldir.
+spoolDir	–	The directory from which to read files from.
+fileSuffix	.COMPLETED	文件被flume处理过后，为其加后缀
+deletePolicy	never	删除策略，当文件被flume处理过后，何时将其删除。never或者immediate.尽量不要立即删除，而是写程序定期删除n天以前的。
+fileHeader	false	在event中加上一个header，以保存event所属文件的绝对路径
+fileHeaderKey	file	event所属文件的绝对路径的header的key
+basenameHeader	false	在event中加上一个header，以保存event所属文件的文件名
+basenameHeaderKey	basename	用以保存event所属文件的文件名的header的key
+includePattern	^.*$	用正则表达式表示的flume可以处理的文件的文件名如果一个文件即符合includePattern同时又符合ignorePattern ，则忽略之
+ignorePattern	^$	忽略哪些文件，正则
+trackerDir	.flumespool	Directory to store metadata related to processing of files. If this path is not an absolute path, then it is interpreted as relative to the spoolDir.
+consumeOrder	oldest	flume对文件的处理顺序，默认先处理最早的文件 In which order files in the spooling directory will be consumed oldest, youngest and random. In case of oldest and youngest, the last modified time of the files will be used to compare the files. In case of a tie, the file with smallest lexicographical order will be consumed first. In case of random any file will be picked randomly. When using oldest and youngest the whole directory will be scanned to pick the oldest/youngest file, which might be slow if there are a large number of files, while using random may cause old files to be consumed very late if new files keep coming in the spooling directory.
+pollDelay	500	在滚动处理一个新的文件前，会有500 milliseconds的延迟
+recursiveDirectorySearch	false	递归处理子文件夹及文件
+maxBackoff	4000	若channel缓存已满，source尝试重新写入channel的最大时间间隔。若sink的处理速度跟不上source的处理速度，则event会在channel中堆积. source会从一个较短的时间间隔开始重试，然后逐渐增大此时间间隔，每次都会抛出 ChannelException异常, 直至maxBackoff
+batchSize	100	source每次写入到channel的events的批大小，也就是说source读取的events数量到达此值，才会写入到channel
+inputCharset	UTF-8	Character set used by deserializers that treat the input file as text.
+decodeErrorPolicy	FAIL	What to do when we see a non-decodable character in the input file. FAIL: Throw an exception and fail to parse the file. REPLACE: Replace the unparseable character with the “replacement character” char, typically Unicode U+FFFD. IGNORE: Drop the unparseable character sequence.
+deserializer	LINE	将文本反序列化为events的方式，默认是LINE,为每行为一个event。flume自带的有LINE，AVRO,BLOB 。可以自定义类来分割解析，但是必须实现类 EventDeserializer.Builder
+deserializer.*		Varies per event deserializer.
+bufferMaxLines	–	(弃用 )
+bufferMaxLineLength	5000	(弃用) Maximum length of a line in the commit buffer. Use deserializer.maxLineLength instead.
+selector.type	replicating	路由策略，若一个source,写入多个channel时。默认为复制多份，写入多个channel。可以个性化，multiplexing
+selector.*		个性化路由策略类
+interceptors	–	拦截器类 Space-separated list of interceptors
+interceptors.*		
+Example for an agent named agent-1:
+
+a1.channels = ch-1 
+a1.sources = src-1
+
+a1.sources.src-1.type = spooldir 
+a1.sources.src-1.channels = ch-1 
+a1.sources.src-1.spoolDir = /var/log/apache/flumeSpool 
+a1.sources.src-1.fileHeader = true
+
+fulme自带的反序列化处理器
+LINE:每一文本行为一个event
+Property Name	Default	Description
+deserializer.maxLineLength	2048	每个event的文本长度，单位为字符。超过2048,则被截断，剩余的字符作为一个新的event? If a line exceeds this length, it is truncated, and the remaining characters on the line will appear in a subsequent event.
+deserializer.outputCharset	UTF-8	将events写入channel时的编码方式
+AVRO
+可以将Avro 的container file 格式的文件进行反序列化为events，每条Avro record 为一个event，会包括一个保存其shema模式的header，其body仅包括Avro record中的二进制数据，不包括模式数据，也不包括其它元素。
+
+（何谓Avro container file format：Avro为了便于MapReduce的处理定义了一种容器文件格式(Container File Format)。这样的文件中只能有一种模式，所有需要存入这个文件的对象都需要按照这种模式以二进制编码的形式写入。对象在文件中以块(Block)来组织，并且这些对象都是可以被压缩的。块和块之间会存在同步标记符(Synchronization Marker)，以便MapReduce方便地切割文件用于处理。 
+）
+
+注意如果因为channel满或其他原因，而需重试写入，这会导致其从上一最近的同步点重新读取，为了减少重复，需在Avro Container file中尽量密集插入同步点
+
+Property Name	Default	Description
+deserializer.schemaType	HASH	How the schema is represented. By default, or when the value HASH is specified, the Avro schema is hashed and the hash is stored in every event in the event header “flume.avro.schema.hash”. If LITERAL is specified, the JSON-encoded schema itself is stored in every event in the event header “flume.avro.schema.literal”. Using LITERAL mode is relatively inefficient compared to HASH mode.
+BlobDeserializer：
+一个BLOB(Binary Large Object )对象为一个event 
+常见的是一个文件为一个BLOB对象，比如一个PDF或者一个JPG。 
+注意这种方式处理的文件不宜过大，因为会将整个BLOB对象缓存在RAM中。
+
+Property Name	Default	Description
+deserializer	–	The FQCN of this class: org.apache.flume.sink.solr.morphline.BlobDeserializer$Builder
+deserializer.maxBlobLength	100000000	The maximum number of bytes to read and buffer for a given request
