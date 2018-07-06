@@ -1,2 +1,8 @@
  1:输出到console
  bin/flume-ng agent --conf ./conf/ -f conf/flume-logappender.properties -Dflume.root.logger=DEBUG,console -n agent1
+ 
+ 2:后台方式运行
+ nohup ./flume-ng agent -c ../conf -f ../conf/g01-taildir-avro-sink.conf -n agent1 -Dflume.root.logger=INFO,console &
+ 
+ 3:后台方式运行，不将日志输出到控制台
+ nohup ./flume-ng agent -c ../conf -f ../conf/g01-taildir-avro-sink.conf -n agent1 &
