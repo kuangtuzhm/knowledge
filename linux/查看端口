@@ -1,0 +1,2 @@
+查看端口
+ps -aux |grep -v grep|grep 28990
