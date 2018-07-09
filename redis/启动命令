@@ -1,0 +1,4 @@
+src/redis-server redis.conf &
+
+停止
+ ./redis-cli shutdown
