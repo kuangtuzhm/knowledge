@@ -1,0 +1,63 @@
+1：查看索引
+GET /_cat/indices?v
+
+2：创建索引
+put /shakespeare
+{
+	"settings":{
+		"number_of_shards": 3,
+		"number_of_replicas": 1
+	},
+	"mappings":{
+		"man":{
+			"properties":{
+				"word_count":{
+					"type": "integer"
+				},
+				"author":{
+					 "type": "keyword"
+				},
+				"title":{
+					"type": "text"
+				},
+				"publish_date":{
+					"type": "date",
+					"format": "yyyy-MM-dd HH:mm:ss || yyyy-MM-dd || epoch_millis"
+				}
+			}
+		},
+		"woman":{
+			
+		}
+	}
+}
+
+3：删除索引
+用以下的请求来 删除索引:
+
+DELETE /my_index
+你也可以这样删除多个索引：
+
+DELETE /index_one,index_two
+DELETE /index_*
+你甚至可以这样删除 全部 索引：
+
+DELETE /_all
+DELETE /*
+
+4：索引设置
+例如，我们可以创建只有 一个主分片，没有副本的小索引：
+
+PUT /my_temp_index
+{
+    "settings": {
+        "number_of_shards" :   1,
+        "number_of_replicas" : 0
+    }
+}
+然后，我们可以用 update-index-settings API 动态修改副本数：
+
+PUT /my_temp_index/_settings
+{
+    "number_of_replicas": 1
+}

@@ -1,0 +1,110 @@
+get /_cat/indices?v
+get /bank
+get /shakespeare
+get /logstash-2015.05.19
+DELETE /bank
+delete /shakespeare
+DELETE /logstash-2015.05.19
+put /bank
+{
+    "aliases": {},
+    "mappings": {
+      "account": {
+        "properties": {
+          "account_number": {
+            "type": "integer"
+          },
+          "address": {
+            "type": "text"
+          },
+          "age": {
+            "type": "integer"
+          },
+          "balance": {
+            "type": "integer"
+          },
+          "email": {
+            "type": "keyword"
+          },
+          "employer": {
+            "type": "text"
+          },
+          "firstname": {
+            "type": "keyword"
+          },
+          "genger": {
+            "type": "keyword"
+          },
+          "lastname": {
+            "type": "keyword"
+          },
+          "state": {
+            "type": "keyword"
+          }
+        }
+      }
+    },
+    "settings": {
+      "number_of_shards": "1",
+      "number_of_replicas": "0"
+    }
+  }
+put /shakespeare
+{
+    "aliases": {},
+    "mappings": {
+      "_default_": {
+        "properties": {
+          "line_id": {
+            "type": "integer"
+          },
+          "play_name": {
+            "type": "keyword"
+          },
+          "speaker": {
+            "type": "keyword"
+          },
+          "speech_number": {
+            "type": "integer"
+          },
+          "text_entry": {
+            "type": "text"
+          }
+        }
+      }
+    },
+    "settings": {
+        "number_of_shards": "1",
+        "number_of_replicas": "0"
+    }
+}
+put /logstash-2015.05.20
+{
+    "aliases": {},
+    "mappings": {
+      "log": {
+        "properties": {
+          "geo": {
+            "properties": {
+              "memory": {
+                "type": "integer"
+              },
+              "coordinates": {
+                "type": "geo_point"
+              },
+              "@timestamp": {
+                "type": "date",
+                "format": "yyyy-MM-dd HH:mm:ss || yyyy-MM-dd || epoch_millis"
+              }
+            }
+          }
+        }
+      }
+    },
+    "settings": {
+      "index": {
+        "number_of_shards": "5",
+        "number_of_replicas": "1"
+      }
+    }
+  }
