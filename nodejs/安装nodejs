@@ -1,6 +1,7 @@
 
-yum -y install nodejs 不能用时
+yum -y install nodejs 
 
+不能用时
 https://www.cnblogs.com/MockingBirdHome/p/3599278.html
 
 还不能用时就用下载包
