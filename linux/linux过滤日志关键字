@@ -1,0 +1,1 @@
+tail -f analyse.log |grep "201807311000001"

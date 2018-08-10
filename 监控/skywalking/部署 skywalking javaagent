@@ -34,3 +34,6 @@ set "CATALINA_OPTS=-javaagent:/path/to/skywalking-agent/skywalking-agent.jar"
 JAR file
 在启动你的应用程序的命令行中添加 -javaagent 参数. 并确保在-jar参数之前添加它. 例如:
 java -javaagent:/path/to/skywalking-agent/skywalking-agent.jar -jar yourApp.jar
+
+如果是多个项目共用同一个agent,增加一个不同项目的配置
+-javaagent:E:\work\platform-base\skywalking\agent\skywalking-agent.jar -Dskywalking.agent.application_code=demo-service
