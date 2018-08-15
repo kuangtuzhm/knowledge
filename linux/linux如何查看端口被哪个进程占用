@@ -1,0 +1,6 @@
+https://www.cnblogs.com/CEO-H/p/7794306.html
+
+
+lsof -i:端口号
+
+netstat -tunlp|grep 端口号
