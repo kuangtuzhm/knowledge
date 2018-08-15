@@ -1,0 +1,10 @@
+https://www.jb51.net/article/95062.htm
+
+第3步
+配置mysql启动服务
+cp support-files/mysql.server /etc/init.d/mysql
+chmod +x /etc/init.d/mysql
+
+之后修改其中的
+basedir=/data/soft/mysql
+datadir=/home/data/mysql/data
