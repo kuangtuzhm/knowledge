@@ -6,3 +6,7 @@
  
  3:后台方式运行，不将日志输出到控制台
  nohup ./flume-ng agent -c ../conf -f ../conf/g01-taildir-avro-sink.conf -n agent1 &
+ 
+ 4:
+ nohup ./flume-ng agent -c ../conf -f ../conf/flume-sdsfileChannelkafkasink.properties -n agent1 &
+ 

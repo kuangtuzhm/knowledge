@@ -1,0 +1,34 @@
+启动命令：  /usr/local/ngnix/sbin/nginx    (无参数) 启动    （-s  stop）关闭    （-s reload）重启
+
+
+
+3、配置nginx开机启动
+    切换到/lib/systemd/system/目录，创建nginx.service文件vim nginx.service
+
+
+# cd /lib/systemd/system/
+# vim nginx.service
+文件内容如下：
+
+[Unit]
+Description=nginx 
+After=network.target 
+   
+[Service] 
+Type=forking 
+ExecStart=/usr/local/nginx/sbin/nginx
+ExecReload=/usr/local/nginx/sbin/nginx reload
+ExecStop=/usr/local/nginx/sbin/nginx quit
+PrivateTmp=true 
+   
+[Install] 
+WantedBy=multi-user.target
+    退出并保存文件，执行systemctl enable nginx.service使nginx开机启动
+
+1
+# systemctl enable nginx.service
+systemctl start nginx.service    启动nginx
+
+systemctl stop nginx.service    结束nginx
+
+systemctl restart nginx.service    重启nginx

@@ -1,0 +1,7 @@
+https://www.cnblogs.com/lunatic-cto/p/6123490.html
+
+
+cp support-files/mysql.server /etc/init.d/mysqld 
+之后修改其中的
+basedir=/data/soft/mysql
+datadir=/home/data/mysql/data
