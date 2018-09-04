@@ -1,1 +1,16 @@
 https://www.cnblogs.com/starlion/p/8988281.html
+
+启动从节点
+start slave;
+
+设置从节点信息
+CHANGE MASTER TO MASTER_HOST='149.129.82.206', MASTER_PORT=3306, MASTER_USER='rep1', MASTER_PASSWORD='jimi@live123',master_heartbeat_period=60,MASTER_LOG_FILE='mysql-bin.000005',MASTER_LOG_POS=35238105;
+
+
+关闭从节点
+stop slave
+
+
+SHOW GLOBAL STATUS LIKE '%slave%'
+
+
