@@ -1,0 +1,67 @@
+package isen.com.tzlocation.util;
+
+/**
+ * Created by zhongkeaixun on 2016/9/19.
+ */
+public class DistanceUtil {
+
+    private static boolean isUseOldParams = false;
+
+    private static final double txPower = 19.5;
+    private static final double refDistance = 1.0;
+    private static final double pathLoss = 3.0;
+
+    private static double txPower_O = 21.0;
+    private static double refDistance_O = 1.0;
+    private static double pathLoss_O = 3.0;
+
+    /**
+     * @param rssi
+     * @return
+     */
+    public static double getevalDistance(float rssi) {
+        try {
+            double c1 = isUseOldParams ? txPower_O : txPower;
+            double c2 = isUseOldParams ? pathLoss_O : pathLoss;
+            double fm = (c1 - rssi) / (10 * c2);
+            double fp = Math.pow(10, fm);
+            double ret = (isUseOldParams ? refDistance_O : refDistance) * fp / 100.0;
+            return ret;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Double.valueOf(rssi);
+        }
+    }
+
+    public static String getDistance(float rssi) {
+        try {
+            double c1 = txPower;
+            double c2 = pathLoss;
+            double fm = (c1 - rssi) / (10 * c2);
+            double fp = Math.pow(10, fm);
+            double ret = refDistance * fp / 100.0;
+            return disFormatStr(ret);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return String.valueOf(rssi);
+        }
+    }
+
+    public static String disFormatStr(double dis) {
+        String s = String.valueOf(dis);
+        int index = s.indexOf(".");
+        return s.substring(0, index + 2);
+    }
+
+    public static String getDisParams() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("txPower= ").append(isUseOldParams ? txPower_O : txPower);
+        sb.append(" ,refDistance= ").append(isUseOldParams ? refDistance_O : refDistance);
+        sb.append(" ,pathLoss= ").append(isUseOldParams ? pathLoss_O : pathLoss);
+        return sb.toString();
+    }
+
+    public static void setIsUseOldParams(boolean isUseOld) {
+        isUseOldParams = isUseOld;
+    }
+}
