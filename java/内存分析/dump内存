@@ -1,0 +1,12 @@
+可以新建一个linux的sh文件。比如叫dump.sh
+
+可以参考以下资料
+http://blog.csdn.net/fenglibing/article/details/6411953
+
+basePath=$(cd "$(dirname "$0")"; pwd)/
+#echo $basePath
+PID=`/bin/ps -ef | grep -v .sh |grep $basePath  |grep -v grep |awk '{print $2}'`
+#echo $PID
+jmap -dump:live,format=b,file=${PID}.heap.bin $PID
+
+
