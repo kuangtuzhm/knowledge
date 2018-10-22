@@ -1,3 +1,5 @@
+直接安装包解压
+
 ./activemq start
 ./activemq stop
 http://localhost:8161/admin/index.jsp
