@@ -1,0 +1,8 @@
+kafka发送消息
+./kafka-console-producer.sh --broker-list 10.2.98.11:9092 --topic albert
+
+kafka接收消息
+./kafka-console-consumer.sh --zookeeper 10.2.98.11:2181 --topic albert
+
+列出topics
+./kafka-topics.sh --list --zookeeper 10.2.98.11:2181

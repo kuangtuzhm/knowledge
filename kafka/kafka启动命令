@@ -1,1 +1,4 @@
 sh bin/kafka-server-start.sh config/server.properties >>/dev/null 2>&1 &
+
+或
+./kafka-server-start.sh -daemon ../config/server.properties
