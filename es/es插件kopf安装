@@ -1,0 +1,8 @@
+KOPF安装
+
+./elasticsearch/bin/plugin install lmenezes/elasticsearch-kopf/{branch|version}
+可以
+./elasticsearch/bin/plugin install lmenezes/elasticsearch-kopf/2.1.1
+
+页面
+http://localhost:9200/_plugin/kopf
