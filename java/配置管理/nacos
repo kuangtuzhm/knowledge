@@ -1,0 +1,4 @@
+https://github.com/alibaba/Nacos
+
+单机启动
+sh startup.sh -m standalone
