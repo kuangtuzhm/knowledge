@@ -1,0 +1,9 @@
+有序队列PriorityQueue
+
+有序队列 线程安全 PriorityBlockingQueue
+
+有序树 非线程安全 TreeMap
+https://blog.csdn.net/ooo123lll/article/details/81126887
+
+有序树 线程安全 ConcurrentSkipListMap
+http://www.cnblogs.com/java-zzl/p/9767255.html
