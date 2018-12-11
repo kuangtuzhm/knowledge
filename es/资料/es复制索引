@@ -1,0 +1,12 @@
+https://blog.csdn.net/qq_34624315/article/details/83089794
+
+
+POST localhost:9200/_reindex
+{
+  "source": {
+    "index": "indexName"
+  },
+  "dest": {
+    "index": "newIndexName"
+  }
+}
