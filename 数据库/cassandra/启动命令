@@ -1,0 +1,2 @@
+cd /home/soft/cassandra/bin
+  ./cassandra &
