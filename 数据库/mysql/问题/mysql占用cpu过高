@@ -1,1 +1,6 @@
 https://www.cnblogs.com/kevingrace/p/6226350.html
+
+
+SHOW FULL PROCESSLIST
+
+SHOW VARIABLES LIKE '%slow%';
