@@ -1,0 +1,29 @@
+storm nimbus &
+storm nimbus >/dev/null 2>&1 &
+
+
+
+storm ui &
+
+storm supervisor &
+
+
+也可以
+（3）启动nimbus（切换到storm的bin目录下）
+
+nohup ./storm nimbus & 
+1
+（4）启动supervisor
+
+nohup ./storm supervisor  &
+1
+（5）启动storm UI
+
+nohup ./storm ui & 
+
+
+
+发布包：
+storm jar storm-learn-helloworld-jar-with-dependencies.jar org.storm.learn.helloworld.ExclamationTopology exclamationTopology
+停止
+storm kill exclamationTopology
