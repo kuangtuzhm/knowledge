@@ -1,5 +1,2 @@
 https://www.cnblogs.com/xiaodf/p/6093261.html
 
-
-查看消费信息
-bin/kafka-consumer-offset-checker.sh --zookeeper 127.0.0.1:2181 --topic topic.gps --group analyse139

@@ -7,7 +7,8 @@ kafka接收消息
 列出topics
 ./kafka-topics.sh --list --zookeeper 10.2.98.11:2181
 
-
+查看消费信息
+bin/kafka-consumer-offset-checker.sh --zookeeper 127.0.0.1:2181 --topic topic.gps --group analyse139
 
 启动
 cd /home/soft/kafka_2.11-0.10.0.1/bin
