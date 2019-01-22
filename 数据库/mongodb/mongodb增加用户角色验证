@@ -1,0 +1,38 @@
+https://www.cnblogs.com/mysql-dba/p/5070772.html
+
+//新增超级管理员
+db.createUser(
+  {
+    user: "root",
+    pwd: "root",
+    roles: [ { role: "root", db: "admin" } ]
+  }
+)
+
+db.createUser(
+  {
+    user: "myUserAdmin5",
+    pwd: "abc123",
+    roles: [{ role: "readWrite", db: "tracker" } ]
+  }
+)
+
+绑定ip  可以保存一个配置文件mongodb.conf
+
+dbpath=/home/data/mongodbtest
+logpath=/home/soft/mongodb/logs/mongodb.log
+port=27117
+fork=true
+auth=true
+bind_ip=127.0.0.1,172.16.10.111
+#bind_ip=172.16.10.111
+#journal=false
+#storageEngine=mmapv1
+#client_max_body_siz 50m;
+
+start.sh
+bin/mongod  --config mongodb.conf
+
+stop.sh
+bin/mongod --config mongodb.conf --shutdown &
+
