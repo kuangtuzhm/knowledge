@@ -4,7 +4,7 @@ https://www.cnblogs.com/mysql-dba/p/5070772.html
 db.createUser(
   {
     user: "root",
-    pwd: "root",
+    pwd: "jimi@123",
     roles: [ { role: "root", db: "admin" } ]
   }
 )
@@ -12,7 +12,7 @@ db.createUser(
 db.createUser(
   {
     user: "myUserAdmin5",
-    pwd: "abc123",
+    pwd: "jimi@123",
     roles: [{ role: "readWrite", db: "tracker" } ]
   }
 )
