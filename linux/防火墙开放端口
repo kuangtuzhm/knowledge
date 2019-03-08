@@ -21,3 +21,9 @@ service iptables restart
 保存在前面部分
 再重启:
 service iptables restart
+
+firewall
+https://blog.csdn.net/ywd1992/article/details/80401630
+
+firewall-cmd --zone=public --add-port=22/tcp --permanent
+firewall-cmd --reload

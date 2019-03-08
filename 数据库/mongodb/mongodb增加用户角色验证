@@ -10,11 +10,16 @@ db.createUser(
 )
 
 db.createUser(
-  {
-    user: "tracker",
-    pwd: "jimi@123",
-    roles: [{ role: "readWrite", db: "tracker" } ]
-  }
+    {
+      user: "tracker",
+      pwd: "jimi@123",
+      roles: [
+         { role: "read", db: "admin" },
+         { role: "readWrite", db: "test" },
+         { role: "readWrite", db: "tracker" },
+         { role: "readWrite", db: "device-state" }
+      ]
+    }
 )
 
 绑定ip  可以保存一个配置文件mongodb.conf
