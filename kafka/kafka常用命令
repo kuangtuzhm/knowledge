@@ -11,6 +11,8 @@ kafka接收消息
 bin/kafka-consumer-offset-checker.sh --zookeeper 127.0.0.1:2181 --topic topic.gps --group analyse139
 查看消费信息--新版本
 bin/kafka-consumer-groups.sh --bootstrap-server 172.16.10.113:9092 --describe --group analyse-113 --new-consumer
+//线上47.112.19.87
+bin/kafka-consumer-groups.sh --bootstrap-server 172.16.1.232:9092 --describe --group analyse --new-consumer
 
 bin/kafka-consumer-offset-checker.sh --zookeeper 172.16.10.116:2181/kafka111 --topic topic.gps --group analyse-114
 bin/kafka-consumer-offset-checker.sh --zookeeper 172.16.0.125:2181 --topic topic.gps --group analyse-114

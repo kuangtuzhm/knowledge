@@ -1,0 +1,13 @@
+./bin/mongodump -h 172.16.10.113 -u root -p jimi@123 --authenticationDatabase admin  -d tracker -o .
+# mongodump -h dbhost -d dbname -o dbdirectory
+# -h:MongDB所在服务器地址，例如：127.0.0.1，当然也可以指定端口号：127.0.0.1:27017
+# -d:需要备份的数据库实例，例如：test
+# -o：备份的数据存放位置
+
+./bin/mongorestore -h 172.16.0.125 -u root -p jimi@123 --authenticationDatabase admin -d tracker tracker
+# mongorestore -h <hostname><:port> -d dbname <path>
+# --host <:port>, -h <:port>：MongoDB所在服务器地址，默认为： localhost:27017
+# --db , -d ：需要恢复的数据库实例
+# --drop：恢复的时候，先删除当前数据，然后恢复备份的数据
+# <path>：mongorestore 最后的一个参数，设置备份数据所在位置
+# --dir：指定备份的目录,你不能同时指定 <path> 和 --dir 选项。

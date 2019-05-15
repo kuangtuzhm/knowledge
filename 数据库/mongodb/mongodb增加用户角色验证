@@ -4,9 +4,20 @@ https://www.cnblogs.com/mysql-dba/p/5070772.html
 db.createUser(
   {
     user: "root",
-    pwd: "jimi@123",
+    pwd: "jimimongo@123456",
     roles: [ { role: "root", db: "admin" } ]
   }
+)
+
+db.createUser(
+    {
+      user: "tracker",
+      pwd: "jimimongo@123456",
+      roles: [
+         { role: "read", db: "admin" },
+         { role: "readWrite", db: "tracker" }
+      ]
+    }
 )
 
 db.createUser(
@@ -21,6 +32,8 @@ db.createUser(
       ]
     }
 )
+
+
 
 绑定ip  可以保存一个配置文件mongodb.conf
 

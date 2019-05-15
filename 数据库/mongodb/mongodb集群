@@ -1,0 +1,30 @@
+cfg= {_id:"repset",members:[ 
+{_id:0,host:"172.16.0.124:27017",priority:1}, 
+{_id:1,host:"172.16.0.125:27017",priority:2}, 
+{_id:2,host:"172.16.0.126:27017",arbiterOnly:true}] 
+};
+rs.initiate(cfg)
+
+rs.status()
+
+新增节点
+rs.add({_id:4,host:"172.16.0.128:27017",priority:0})
+
+增加密码
+openssl rand -base64 512 > access.key
+chmod 600 access.key
+
+然后在配置文件增加
+keyFile = /data1/mongodb/access.key
+
+
+查看副本延迟时间
+rs.printSlaveReplicationInfo()
+查看集群配置
+rs.config()
+
+
+更改集群的同步来源，设置为false则都从主的同步
+cfg = rs.config()
+cfg.settings.chainingAllowed = false
+rs.reconfig(cfg)
