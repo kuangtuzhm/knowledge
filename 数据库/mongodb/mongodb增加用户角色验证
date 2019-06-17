@@ -8,7 +8,7 @@ db.createUser(
     roles: [ { role: "root", db: "admin" } ]
   }
 )
-
+//新增普通用户
 db.createUser(
     {
       user: "tracker",
