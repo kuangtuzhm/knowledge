@@ -1,0 +1,7 @@
+
+https://blog.csdn.net/D_Guco/article/details/94746802
+
+官方文档
+https://pingcap.com/docs-cn/v3.0/how-to/deploy/orchestrated/ansible/
+如果不是SSD盘，初始化系统环境，修改内核参数时命令要改下，加参数
+ansible-playbook bootstrap.yml --extra-vars "dev_mode=True"

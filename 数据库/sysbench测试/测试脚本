@@ -1,0 +1,4 @@
+1：mysql
+sysbench ./lua/oltp_read_only.lua --mysql-host=172.16.10.113 --mysql-port=3306 
+--mysql-user=root --mysql-password=123456 --mysql-db=test --tables=10 --table-size=10000 
+--report-interval=10 --threads=128 --time=120 prepare/run/cleanup

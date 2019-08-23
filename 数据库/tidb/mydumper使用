@@ -1,0 +1,30 @@
+参考文档
+https://blog.csdn.net/yang_hwei/article/details/78834957
+
+1：下载
+https://github.com/maxbube/mydumper/releases
+
+2：把第一步下载文件进行安装
+比如下载的mydumper-0.9.5-2.el7.x86_64.rpm
+
+则
+yum install mydumper-0.9.5-2.el7.x86_64.rpm
+
+3：安装完后使用
+
+mydumper -h 172.16.10.113 -P 3306 -u root -p 123456 -t 16 -F 64 -B tracker-api -T user_relation --skip-tz-utc -o ./data
+
+上面，我们使用 -B test 表明是对 test 这个 database 操作，然后用 -T t1,t2 表明只导出 t1，t2 两张表。
+
+-t 16 表明使用 16 个线程去导出数据。-F 64 是将实际的 table 切分成多大的 chunk，这里就是 64MB 一个 chunk。
+
+--skip-tz-utc 添加这个参数忽略掉 MySQL 与导数据的机器之间时区设置不一致的情况，禁止自动转换。
+
+导出的文件位置在本目录的data下
+
+如果导入时报 transaction too large  则可以把数据文件切小， -F 5就可以了
+
+
+4：导入
+
+myloader -h 172.16.0.126 -u root -p jimi@123 -P 4000 -t 32 -d ./data
