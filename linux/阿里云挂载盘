@@ -1,0 +1,8 @@
+//存在分区信息不
+	 1)fdisk -l
+   //存在直接挂载
+	 2) mkfs.ext4 /dev/vdb1
+	//创建data目录 
+	 3） cd  /
+	 4） mkdir  data
+	 5）  mount /dev/vdb1 /data
