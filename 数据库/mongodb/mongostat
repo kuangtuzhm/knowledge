@@ -1,0 +1,5 @@
+https://blog.csdn.net/u011186019/article/details/70918288
+
+./mongostat --host 172.16.10.113:27017 -uroot -pjimi@123 --authenticationDatabase admin
+
+./mongostat --host 172.16.7.216:27017 -uroot -pjimimongo@123456 --authenticationDatabase admin
