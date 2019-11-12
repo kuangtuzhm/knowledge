@@ -1,0 +1,7 @@
+默认用户名密码cassandra  cassandra
+
+
+CREATE USER root WITH PASSWORD 'tracker@cassandra' SUPERUSER ;
+
+
+DROP USER cassandra ;
