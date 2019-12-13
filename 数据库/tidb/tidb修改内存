@@ -1,0 +1,23 @@
+https://blog.csdn.net/jiangbenchu/article/details/103409463
+
+
+调整TiDB-Server的内存使用上限
+1 修改 inventory.ini
+根据自己机器实际的内存来设置
+当 TiDB-Server 进程的 常驻内存 超过这个限制，进程将被杀死
+并且在TiDB-Server的日志中抛出 OOM 异常
+.....
+# 常驻内存上限
+MemoryLimit = 25G
+
+
+注：这个操作改变的是 /etc/systemd/system/tidb-4000.service 文件中的配置
+
+[root@hostname ~]# cat /etc/systemd/system/tidb-4000.service | grep MemoryLimit
+MemoryLimit=25G
+[root@hostname ~]#
+
+TiDB Server 常驻内存与实际堆内存相差较大
+
+2 滚动更新 tidb (修改完配置文件一定要更新配置)
+[root@hostname ~]# ansible-playbook rolling_update.yml

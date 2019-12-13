@@ -1,4 +1,13 @@
 1：mysql
-sysbench ./lua/oltp_read_only.lua --mysql-host=172.16.10.113 --mysql-port=3306 
---mysql-user=root --mysql-password=123456 --mysql-db=test --tables=10 --table-size=10000 
---report-interval=10 --threads=128 --time=120 prepare/run/cleanup
+sysbench ./lua/oltp_read_only.lua --mysql-host=172.16.10.113 --mysql-port=3306 --mysql-user=root --mysql-password=123456 --mysql-db=test --tables=10 --table-size=10000 --report-interval=10 --threads=128 --time=120 prepare/run/cleanup
+
+ sysbench ./lua/oltp_read_only.lua --mysql-host=172.16.10.113 --mysql-port=3306 --mysql-user=root --mysql-password=123456 --mysql-db=test --tables=10 --table-size=100000 --report-interval=10 --threads=128 --time=120 prepare
+ 
+sysbench ./lua/oltp_read_only.lua --mysql-host=172.16.10.113 --mysql-port=3306 --mysql-user=root --mysql-password=123456 --mysql-db=test --tables=10 --table-size=100000 --report-interval=10 --threads=128 --time=120 prepare
+
+sysbench ./lua/oltp_read_only.lua --mysql-host=172.16.0.125 --mysql-port=4000 --mysql-user=root --mysql-password= --mysql-db=test --tables=1 --table-size=100000 --report-interval=5 --threads=256 --time=120 run
+
+sysbench ./lua/oltp_read_write.lua --mysql-host=172.16.0.125 --mysql-port=4000 --mysql-user=root --mysql-password= --mysql-db=test2 --tables=1 --table-size=100000 --report-interval=5 --threads=256 --time=10  --skip_trx=on run
+
+sysbench ./lua/oltp_insert_z.lua --mysql-host=172.16.0.125 --mysql-port=4000 --mysql-user=root --mysql-password= --mysql-db=test2 --tables=1 --table-size=100000 --report-interval=5 --threads=128 --time=100  --skip_trx=on --auto_inc=on  run
+
