@@ -1,0 +1,8 @@
+创建并启动
+docker-compose -f docker-compose.yml up -d
+
+关闭并清除container
+docker-compose -f docker-compose.yml down
+
+
+

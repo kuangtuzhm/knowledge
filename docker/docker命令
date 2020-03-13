@@ -21,3 +21,6 @@ docker rm 'docker ps -a -q'：-a标志列出所有容器，-q标志只列出容�
 
 5：构建镜像
 docker build -t nginx:v3 .
+
+查找进程
+docker ps|grep rocketmq

@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<!DOCTYPE mycat:schema SYSTEM "schema.dtd">
+<mycat:schema xmlns:mycat="http://io.mycat/">
+
+	<schema name="his" checkSQLschema="false" sqlMaxLimit="10000">
+		<!-- 配置表 -->  	
+        <table name="tab_part_info"  dataNode="dn1_info" />
+        <!-- GPS表 -->
+        <table name="gps_his" dataNode="dn1_$10-19" rule="imei-murmur" />
+
+        <!-- OBD表 -->
+        <table name="obd_his" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <!-- gps历史  -->
+        <table name="gps_his_01" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="gps_his_02" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="gps_his_03" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="gps_his_04" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="gps_his_05" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="gps_his_06" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="gps_his_07" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="gps_his_08" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="gps_his_09" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="gps_his_10" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="gps_his_11" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="gps_his_12" dataNode="dn1_$10-19" rule="imei-murmur" />
+
+        <!-- hb历史 -->
+        <table name="hb_his" dataNode="dn1_$10-19" rule="alarm-imei-murmur" />
+
+        <!-- OIL表 -->
+        <table name="oil_his" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="oil_his_202001" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="oil_his_202002" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="oil_his_202003" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="oil_his_202004" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="oil_his_202005" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="oil_his_202006" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="oil_his_202007" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="oil_his_202008" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="oil_his_202009" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="oil_his_202010" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="oil_his_202011" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="oil_his_202012" dataNode="dn1_$10-19" rule="imei-murmur" />
+
+        <!-- VOL表 -->
+        <table name="vol_his" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="vol_his_202001" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="vol_his_202002" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="vol_his_202003" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="vol_his_202004" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="vol_his_202005" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="vol_his_202006" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="vol_his_202007" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="vol_his_202008" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="vol_his_202009" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="vol_his_202010" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="vol_his_202011" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="vol_his_202012" dataNode="dn1_$10-19" rule="imei-murmur" />
+
+        <!-- TEM表 -->
+        <table name="tem_his" dataNode="dn1_$10-19" rule="imei-murmur" />
+                <table name="tem_his_202001" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="tem_his_202002" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="tem_his_202003" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="tem_his_202004" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="tem_his_202005" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="tem_his_202006" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="tem_his_202007" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="tem_his_202008" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="tem_his_202009" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="tem_his_202010" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="tem_his_202011" dataNode="dn1_$10-19" rule="imei-murmur" />
+        <table name="tem_his_202012" dataNode="dn1_$10-19" rule="imei-murmur" />
+                <!--门状态历史-->
+        <table name="status_his" dataNode="dn1_$10-19" rule="imei-murmur" />
+
+                <!-- acc表 -->
+        <table name="report_acc_segment" dataNode="dn1_$10-19" rule="alarm-imei-murmur" />
+        <table name="report_acc_segment_01" dataNode="dn1_$10-19" rule="alarm-imei-murmur" />
+        <table name="report_acc_segment_02" dataNode="dn1_$10-19" rule="alarm-imei-murmur" />
+        <table name="report_acc_segment_03" dataNode="dn1_$10-19" rule="alarm-imei-murmur" />
+        <table name="report_acc_segment_04" dataNode="dn1_$10-19" rule="alarm-imei-murmur" />
+        <table name="report_acc_segment_05" dataNode="dn1_$10-19" rule="alarm-imei-murmur" />
+        <table name="report_acc_segment_06" dataNode="dn1_$10-19" rule="alarm-imei-murmur" />
+        <table name="report_acc_segment_07" dataNode="dn1_$10-19" rule="alarm-imei-murmur" /> 
+        <table name="report_acc_segment_08" dataNode="dn1_$10-19" rule="alarm-imei-murmur" /> 
+        <table name="report_acc_segment_09" dataNode="dn1_$10-19" rule="alarm-imei-murmur" /> 
+        <table name="report_acc_segment_10" dataNode="dn1_$10-19" rule="alarm-imei-murmur" /> 
+        <table name="report_acc_segment_11" dataNode="dn1_$10-19" rule="alarm-imei-murmur" /> 
+        <table name="report_acc_segment_12" dataNode="dn1_$10-19" rule="alarm-imei-murmur" /> 
+           
+        <!-- stop表 -->
+        <table name="report_stop_segment" dataNode="dn1_$10-19" rule="alarm-imei-murmur" />
+        <table name="report_stop_segment_01" dataNode="dn1_$10-19" rule="alarm-imei-murmur" />
+        <table name="report_stop_segment_02" dataNode="dn1_$10-19" rule="alarm-imei-murmur" />
+        <table name="report_stop_segment_03" dataNode="dn1_$10-19" rule="alarm-imei-murmur" /> 
+        <table name="report_stop_segment_04" dataNode="dn1_$10-19" rule="alarm-imei-murmur" /> 
+        <table name="report_stop_segment_05" dataNode="dn1_$10-19" rule="alarm-imei-murmur" />
+        <table name="report_stop_segment_06" dataNode="dn1_$10-19" rule="alarm-imei-murmur" />
+        <table name="report_stop_segment_07" dataNode="dn1_$10-19" rule="alarm-imei-murmur" /> 
+        <table name="report_stop_segment_08" dataNode="dn1_$10-19" rule="alarm-imei-murmur" /> 
+        <table name="report_stop_segment_09" dataNode="dn1_$10-19" rule="alarm-imei-murmur" /> 
+        <table name="report_stop_segment_10" dataNode="dn1_$10-19" rule="alarm-imei-murmur" /> 
+        <table name="report_stop_segment_11" dataNode="dn1_$10-19" rule="alarm-imei-murmur" /> 
+        <table name="report_stop_segment_12" dataNode="dn1_$10-19" rule="alarm-imei-murmur" />
+           
+        <!-- track表 -->
+        <table name="report_track_segment" dataNode="dn1_$10-19" rule="alarm-imei-murmur" />
+        <table name="report_track_segment_01" dataNode="dn1_$10-19" rule="alarm-imei-murmur" />
+        <table name="report_track_segment_02" dataNode="dn1_$10-19" rule="alarm-imei-murmur" />
+        <table name="report_track_segment_03" dataNode="dn1_$10-19" rule="alarm-imei-murmur" /> 
+        <table name="report_track_segment_04" dataNode="dn1_$10-19" rule="alarm-imei-murmur" /> 
+        <table name="report_track_segment_05" dataNode="dn1_$10-19" rule="alarm-imei-murmur" />
+        <table name="report_track_segment_06" dataNode="dn1_$10-19" rule="alarm-imei-murmur" />
+        <table name="report_track_segment_07" dataNode="dn1_$10-19" rule="alarm-imei-murmur" /> 
+        <table name="report_track_segment_08" dataNode="dn1_$10-19" rule="alarm-imei-murmur" /> 
+        <table name="report_track_segment_09" dataNode="dn1_$10-19" rule="alarm-imei-murmur" /> 
+        <table name="report_track_segment_10" dataNode="dn1_$10-19" rule="alarm-imei-murmur" /> 
+        <table name="report_track_segment_11" dataNode="dn1_$10-19" rule="alarm-imei-murmur" /> 
+        <table name="report_track_segment_12" dataNode="dn1_$10-19" rule="alarm-imei-murmur" /> 
+
+        <table name="device_login" dataNode="dn1_$10-19" rule="alarm-imei-murmur"/>
+
+        <!--里程统计-->
+        <table name="report_distance_sum_01" dataNode="dn1_$10-19" rule="imei-murmur"/>
+        <table name="report_distance_sum_02" dataNode="dn1_$10-19" rule="imei-murmur"/>
+        <table name="report_distance_sum_03" dataNode="dn1_$10-19" rule="imei-murmur"/>
+        <table name="report_distance_sum_04" dataNode="dn1_$10-19" rule="imei-murmur"/>
+        <table name="report_distance_sum_05" dataNode="dn1_$10-19" rule="imei-murmur"/>
+        <table name="report_distance_sum_06" dataNode="dn1_$10-19" rule="imei-murmur"/>
+        <table name="report_distance_sum_07" dataNode="dn1_$10-19" rule="imei-murmur"/>
+        <table name="report_distance_sum_08" dataNode="dn1_$10-19" rule="imei-murmur"/>
+        <table name="report_distance_sum_09" dataNode="dn1_$10-19" rule="imei-murmur"/>
+        <table name="report_distance_sum_10" dataNode="dn1_$10-19" rule="imei-murmur"/>
+        <table name="report_distance_sum_11" dataNode="dn1_$10-19" rule="imei-murmur"/>
+        <table name="report_distance_sum_12" dataNode="dn1_$10-19" rule="imei-murmur"/>
+
+        <!-- UBI事件详情 -->
+        <table name="ubi_event_info" dataNode="dn1_$10-19" rule="alarm-imei-murmur" />
+        <table name="ubi_event_info_01" dataNode="dn1_$10-19" rule="alarm-imei-murmur" />
+        <table name="ubi_event_info_02" dataNode="dn1_$10-19" rule="alarm-imei-murmur" />
+        <table name="ubi_event_info_03" dataNode="dn1_$10-19" rule="alarm-imei-murmur" />
+        <table name="ubi_event_info_04" dataNode="dn1_$10-19" rule="alarm-imei-murmur" />
+        <table name="ubi_event_info_05" dataNode="dn1_$10-19" rule="alarm-imei-murmur" />
+        <table name="ubi_event_info_06" dataNode="dn1_$10-19" rule="alarm-imei-murmur" />
+        <table name="ubi_event_info_07" dataNode="dn1_$10-19" rule="alarm-imei-murmur" />
+        <table name="ubi_event_info_08" dataNode="dn1_$10-19" rule="alarm-imei-murmur" />
+        <table name="ubi_event_info_09" dataNode="dn1_$10-19" rule="alarm-imei-murmur" />
+        <table name="ubi_event_info_10" dataNode="dn1_$10-19" rule="alarm-imei-murmur" />
+        <table name="ubi_event_info_11" dataNode="dn1_$10-19" rule="alarm-imei-murmur" />
+        <table name="ubi_event_info_12" dataNode="dn1_$10-19" rule="alarm-imei-murmur" />
+
+        <!--三分钟里程状态统计-->
+        <table name="report_distance_status" dataNode="dn1_$10-19" rule="imei-murmur"/>
+
+        <!--出境报表-->
+        <table name="leave_country" dataNode="dn1_$10-19" rule="imei-murmur"/>
+	</schema>
+	<dataNode name="dn1_info" dataHost="host1" database="his1_10" />
+    <dataNode name="dn1_$10-19" dataHost="host1" database="his1_$10-19" />
+	
+	<!-- 节点1 -->
+	<dataHost name="host1" maxCon="100" minCon="100" balance="0" writeType="0" dbType="mysql" dbDriver="native">
+        <heartbeat>select user()</heartbeat>
+        <writeHost host="host1M" url="10.10.86.15:3306" user="root" password="jimi@123"></writeHost>
+    </dataHost>
+	
+</mycat:schema>

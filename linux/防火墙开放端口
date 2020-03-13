@@ -27,3 +27,11 @@ https://blog.csdn.net/ywd1992/article/details/80401630
 
 firewall-cmd --zone=public --add-port=22/tcp --permanent
 firewall-cmd --reload
+
+
+防火墙命令
+https://www.cnblogs.com/zxg-blog/p/9835263.html
+
+
+
+
