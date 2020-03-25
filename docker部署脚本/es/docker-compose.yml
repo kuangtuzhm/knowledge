@@ -15,6 +15,7 @@ services:
     volumes:
       - /data1/data/esdocker/data:/usr/share/elasticsearch/data
       - /data1/data/esdocker/logs:/usr/share/elasticsearch/logs
+      - ./log4j2.properties:/usr/share/elasticsearch/config/log4j2.properties
     ports:
       - 9600:9200
       - 9700:9300
