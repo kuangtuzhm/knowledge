@@ -1,0 +1,9 @@
+version: '3.5'
+services:
+  analyse-service:
+    image: 172.16.10.115:5000/hk/tracker-api_foreign:latest
+    container_name: api_hk
+    volumes:
+      - /data/data/api/logs:/logs
+    ports:
+      - 9080:9080

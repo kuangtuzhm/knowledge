@@ -1,0 +1,7 @@
+https://blog.csdn.net/manchengpiaoxue/article/details/92796079
+
+//保存
+docker save 172.16.10.115:5000/hk/tracker-analyse_foreign -o 8e31d1ea59e9.tar
+然后下载到需要的机器
+//加载
+docker load -i 8e31d1ea59e9.tar

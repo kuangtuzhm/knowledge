@@ -1,0 +1,9 @@
+version: '3.5'
+services:
+  analyse-service:
+    image: 172.16.10.115:5000/analyse_foreign/tracker-analyse-hk:latest
+    container_name: analyse_hk
+    volumes:
+      - /data/data/analyse/logs:/logs
+    extra_hosts:
+      - kafka-208:10.10.86.6

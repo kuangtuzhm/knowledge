@@ -1,0 +1,13 @@
+version: '3.5'
+services:
+  rtv-service:
+    image: 172.16.10.115:5000/pro/rtv-mul:latest
+    container_name: rtv_hk
+    ports:
+      - 8888:8888
+      - 8666:8666
+    volumes:
+      - /data/data/rtv/logs:/logs
+    #command: /bin/sh -c java ${JAVA_OPTS} -cp /app/resources/:/app/classes/:/app/libs/* com.jimi.StartUp --spring.profiles.active=dev
+    environment:
+        JAVA_OPTS: -server -Xms512m -Xmx512m -Xmn256m -Dspring.profiles.active=hk

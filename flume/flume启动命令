@@ -8,5 +8,7 @@
  nohup ./flume-ng agent -c ../conf -f ../conf/g01-taildir-avro-sink.conf -n agent1 &
  
  4:
- nohup ./flume-ng agent -c ../conf -f ../conf/flume-sdsfileChannelkafkasink.properties -n agent1 &
+nohup ./flume-ng agent -c ../conf -f ../conf/flume-sdsfileChannelkafkasink.properties -n agent1 &
+ 
+nohup ./flume-ng agent -c ../conf -f ../conf/flume-agent.properties -n agent1 &
  

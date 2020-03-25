@@ -1,26 +1,36 @@
-http://blog.csdn.net/u010246789/article/details/53958662
+https://blog.csdn.net/wknhsj1/article/details/81100282
 
-启动
-systemctl start docker.service
-
-1：进入docker容器
-docker exec -it webserver-nginx-v3 bash
-2：启动容器
-docker run --name webserver-nginx-v3 -d -p 80:80 nginx:v3
-或
-docker start docker_run，或者ID：docker start 43e3fef2266c
-3：停止容器
-docker stop [NAME]/[CONTAINER ID]:将容器退出。
-docker kill [NAME]/[CONTAINER ID]:强制停止一个容器。
-4：删除
-容器终止后，在需要的时候可以重新启动，确定不需要了，可以进行删除操作。
-docker rm [NAME]/[CONTAINER ID]:不能够删除一个正在运行的容器，会报错。需要先停止容器。 
-
-一次性删除：docker本身没有提供一次性删除操作，但是可以使用如下命令实现：
-docker rm 'docker ps -a -q'：-a标志列出所有容器，-q标志只列出容器的ID，然后传递给rm命令，依次删除容器。
-
-5：构建镜像
-docker build -t nginx:v3 .
-
-查找进程
-docker ps|grep rocketmq
+#查看当前docker版本
+docker -v
+#查看当前本地所有镜像
+docker images
+#构造镜像,用法docker build -t 镜像名称 .
+docker build -t docker_demo .
+#用于容器与主机之间的数据拷贝。用法docker cp 主机文件地址 容器内地址。12d7f14v45cv为容器id。
+docker cp /www/runoob 12d7f14v45cv:/www/
+#创建一个新的容器并运行，-d为后台执行，-p 9000:3000前面为主机端口，后面是容器端口。docker_demo镜像名
+docker run -d -p 9000:3000 docker_demo
+#启动已被停止的容器
+docker start docker_demo
+#关闭已被启动的容器
+docker stop docker_demo
+#重新启动容器
+docker restart docker_demo
+#杀掉一个运行中的容器。
+docker kill -s KILL docker_demo
+#删除一个或多少容器。-f :通过SIGKILL信号强制删除一个运行中的容器-l :移除容器间的网络连接，而非容器本身-v :-v 删除与容器关联的卷
+docker rm -f docker_demo、docker_demo1
+#在运行的容器中执行命令。104e28f2f072容器id
+sudo docker exec -it 104e28f2f072 /bin/bash 
+#列出容器。 -a:所有容器包含没有运行的
+docker ps 
+#获取容器获取容器的日志 104e28f2f072容器id，-t:显示时间戳
+docker logs -f -t 104e28f2f072 
+#登陆镜像仓库
+docker login
+#获取镜像
+docker pull 
+#上传镜像
+docker push
+#查看指定镜像的创建历史。
+docker history docker_demo

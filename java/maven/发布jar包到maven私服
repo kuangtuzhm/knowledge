@@ -1,0 +1,8 @@
+1：eclispse中的项目
+右击项目，依次执行：Run As --> Run Configurations ---> Maven Build --->New _Configuration(双击Maven Build可生成) -->  Browse Workspace 选中项目,
+Goals输入 ： deploy -e      后，点击 Run
+
+https://www.cnblogs.com/maohuidong/p/10439398.html
+
+2：普通的jar包可以在cmd中
+mvn deploy:deploy-file -Dmaven.test.skip=true -DgroupId=com.jimi -DartifactId=xtool -Dversion=0.0.2-SNAPSHOT -Dpackaging=jar -Dfile=D:/tmp/xtool-0.0.2-SNAPSHOT.jar -Durl=http://172.16.0.101:8081/nexus/content/repositories/releases/ -DrepositoryId=releases

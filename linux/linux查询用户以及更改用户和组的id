@@ -1,0 +1,22 @@
+more  /etc/passwd
+修改已有用户的
+usermod -u 3000 rocketmq
+修改已有组的
+groupmod -g 3000 rocketmq
+
+
+
+1、添加指定gid的组
+
+groupadd -g 3000 rocketmq
+# 添加了一个指定gid为1001的upload用户
+
+
+2、添加指定uid的用户，并加入到指定组
+
+useradd -u 3000 -g rocketmq rocketmq
+# 添加了一个uid为1001的用户，并加入到upload的组中
+
+删除
+userdel rocketmq
+groupdel rocketmq
