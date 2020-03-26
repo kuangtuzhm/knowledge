@@ -1,0 +1,7 @@
+version: '2.2'
+services:
+  eshead:
+    image: slydeveloper/elasticsearch-head
+    container_name: eshead
+    ports:
+      - 9100:9100
