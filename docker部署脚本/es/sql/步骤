@@ -1,0 +1,21 @@
+1
+docker-compose.yml中增加volumn
+./elasticsearch-sql-6.8.6.0.zip:/usr/share/elasticsearch/elasticsearch-sql-6.8.6.0.zip
+
+elasticsearch-sql-6.8.6.0.zip文件授权   
+chmod 777 elasticsearch-sql-6.8.6.0.zip
+
+2:启动后到es的docker容器中执行安装指令
+./bin/elasticsearch-plugin install file:elasticsearch-sql-6.8.6.0.zip
+
+
+如果网速好的话直接从网上安装更好
+./bin/elasticsearch-plugin install https://github.com/NLPchina/elasticsearch-sql/releases/download/6.8.6.0/elasticsearch-sql-6.8.6.0.zip
+
+3:安装完成后重启es的docker
+
+前端安装
+解压es-sql-site-standalone.zip
+cd site-server
+npm install express --save
+node node-server.js 

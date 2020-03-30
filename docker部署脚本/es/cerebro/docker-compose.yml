@@ -1,0 +1,7 @@
+version: '2.2'
+services:
+  es-cerebro:
+    image: lmenezes/cerebro:0.8.5
+    container_name: es-cerebro
+    ports:
+      - 9000:9000

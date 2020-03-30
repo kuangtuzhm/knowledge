@@ -1,0 +1,3 @@
+es2.4.4
+插件直接通过docker-compose的volumn进行映射
+log日志文件也不同
