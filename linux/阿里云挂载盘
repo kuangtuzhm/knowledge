@@ -6,3 +6,14 @@
 	 3） cd  /
 	 4） mkdir  data
 	 5）  mount /dev/vdb /data
+	 
+	 
+	 
+	 
+https://www.cnblogs.com/shangpolu/p/8177481.html?from=groupmessage&isappinstalled=0
+新的系统没有挂载，需要自己先分区后挂载
+通过命令lsblk查找到磁盘
+然后分区  parted /dev/nvme1n1 ，上边网址里的方式分区
+分区后格式化， mkfs.ext4 /dev/nvme1n1p1
+然后创建目录 /data ,  最后挂载新的分区  mount /dev/nvme1n1p1  /data
+然后查看df -h

@@ -1,0 +1,4 @@
+service crond status
+
+crontab -e  编辑定时任务
+crontab -l  看定时任务列表

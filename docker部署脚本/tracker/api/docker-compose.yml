@@ -1,6 +1,6 @@
 version: '3.5'
 services:
-  analyse-service:
+  api-service:
     image: 172.16.10.115:5000/api_foreign/tracker-api-sz:latest
     container_name: api_hk
     volumes:

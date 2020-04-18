@@ -1,0 +1,8 @@
+#安装iperf3
+yum update -y && yum install iperf3
+##测试命令
+#服务器端
+iperf3 -s -i 1 -p 16000
+#客户端
+iperf3 -c 172.31.53.43 -i 1 -p 16000 -l 1024 -t 600 -P 8
+iperf3 -c 172.14.1.214 -i 1 -p 16000 -l 1024 -t 600 -P 8
