@@ -1,0 +1,9 @@
+对于 CentOS/Redhat 系统，你只需要简单执行下述命令。
+
+在 CentOS，你可能在你能安装 Fio 前需要去安装 EPEL 仓库到你的系统中。你可以通过执行下述命令来安装它：
+
+sudo yum install epel-release -y
+
+你可以执行下述命令来安装 Fio：
+
+sudo yum install fio -y

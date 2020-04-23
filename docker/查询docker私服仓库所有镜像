@@ -1,0 +1,5 @@
+首先获得镜像
+http://172.16.10.115:5000/v2/_catalog
+然后查看镜像的tag信息
+http://192.168.1.8:5000/v2/image_name/tags/list
+比如http://172.16.10.115:5000/v2/openjdk/tags/list

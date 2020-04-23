@@ -1,0 +1,12 @@
+version: '2'
+services:
+  cassandratest:
+    image: cassandra:3
+    container_name: cassandratest
+    volumes:
+      - ./cassandra.yaml:/etc/cassandra/cassandra.yaml
+      - /data/data/cassandra/data:/opt/cassandra/data
+      - /data/data/cassandra/log:/opt/cassandra/logs
+    ports:
+      - 9142:9042
+    restart: always

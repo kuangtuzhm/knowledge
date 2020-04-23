@@ -1,9 +1,24 @@
 version: '3.5'
 services:
-  api-service:
-    image: 172.16.10.115:5000/api_foreign/tracker-api-sz:latest
-    container_name: api_hk
+  apiservicesz:
+    image: 172.16.10.115:5000/api_foreign/tracker-api:latest
+    container_name: api_sz
     volumes:
       - /data/data/api/logs:/logs
+      - ./config.properties:/app/resources/config.properties
+      - ./log4j.properties:/app/resources/log4j.properties
+    extra_hosts:
+      - kafka-208:10.10.86.15
+      - datanode150.foreign:47.75.142.133
+      - master148.foreign:47.244.99.2
+      - datanode149.foreign:47.244.205.207
+      - datanode152.foreign.hbase:47.244.124.159
+      - datanode153.foreign.hbase:47.244.206.80
     ports:
       - 9080:9080
+    networks:
+      - es244_default
+networks:
+  es244_default:
+    name: es244_default
+    driver: bridge

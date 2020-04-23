@@ -1,0 +1,11 @@
+mdadm -C -v /dev/md0 -l 0 -n 8 /dev/sdc /dev/sdd /dev/sde /dev/sdf /dev/sdg /dev/sdh /dev/sdi /dev/sdj
+表示挂载了8个磁盘，从/dev/sdc....到/dev/sdj
+磁盘阵列为/dev/md0
+
+之后就是
+查看是否创建成功 cat /proc/mdstat
+mkfs.ext4 /dev/md0  然后mount
+
+
+
+https://blog.csdn.net/qq_41714057/article/details/81141689
