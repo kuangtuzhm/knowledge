@@ -22,7 +22,6 @@ nohup ./storm supervisor  &
 nohup ./storm ui & 
 
 
-
 发布包：
 storm jar storm-learn-helloworld-jar-with-dependencies.jar org.storm.learn.helloworld.ExclamationTopology exclamationTopology
 停止
