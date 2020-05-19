@@ -1,0 +1,30 @@
+https://www.jianshu.com/p/1bc591e64c98
+
+在/etc/my.cnf配置文件中添加以下信息，让MYSQL数据库支持utf8mb4。
+
+[client]
+default-character-set = utf8mb4
+
+[mysql]
+default-character-set=utf8mb4
+
+[mysqld]
+character-set-client-handshake = FALSE
+collation-server = utf8mb4_general_ci
+init-connect='SET NAMES utf8mb4'
+character-set-server=utf8mb4
+
+2 重启数据库
+systemctl restart mysqld
+
+3，修改数据库与表的字符集
+更改数据库编码：ALTER DATABASE caitu99 CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+更改表编码：ALTER TABLE TABLE_NAME CONVERT TO CHARACTER SET utf8mb4 COLLATEutf8mb4_general_ci;
+
+4. 更改MYCAT 配置文件
+在Mycat server.xml中的<system>段中加入一条支持utf8mb4的属性：
+<property name="charset">utf8mb4</property>
+并重启MYCAT
+
+5:代码中数据库连接池
+最后，将数据库连接语句url中去掉characterEncoding;重启项目。
