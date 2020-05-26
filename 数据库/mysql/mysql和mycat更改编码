@@ -28,3 +28,16 @@ systemctl restart mysqld
 
 5:代码中数据库连接池
 最后，将数据库连接语句url中去掉characterEncoding;重启项目。
+
+
+//这个是查看和修改字符集的
+https://www.cnblogs.com/yangmingxianshen/p/7999428.html
+
+
+
+
+
+
+
+
+
