@@ -28,3 +28,75 @@ systemctl restart mysqld
 
 5:代码中数据库连接池
 最后，将数据库连接语句url中去掉characterEncoding;重启项目。
+
+
+更改表的
+ALTER TABLE `report_overspeed_segment_01` CONVERT TO CHARACTER SET utf8mb4;
+ALTER TABLE `report_overspeed_segment_02` CONVERT TO CHARACTER SET utf8mb4;
+ALTER TABLE `report_overspeed_segment_03` CONVERT TO CHARACTER SET utf8mb4;
+ALTER TABLE `report_overspeed_segment_04` CONVERT TO CHARACTER SET utf8mb4;
+ALTER TABLE `report_overspeed_segment_05` CONVERT TO CHARACTER SET utf8mb4;
+ALTER TABLE `report_overspeed_segment_06` CONVERT TO CHARACTER SET utf8mb4;
+ALTER TABLE `report_overspeed_segment_07` CONVERT TO CHARACTER SET utf8mb4;
+ALTER TABLE `report_overspeed_segment_08` CONVERT TO CHARACTER SET utf8mb4;
+ALTER TABLE `report_overspeed_segment_09` CONVERT TO CHARACTER SET utf8mb4;
+ALTER TABLE `report_overspeed_segment_10` CONVERT TO CHARACTER SET utf8mb4;
+ALTER TABLE `report_overspeed_segment_11` CONVERT TO CHARACTER SET utf8mb4;
+ALTER TABLE `report_overspeed_segment_12` CONVERT TO CHARACTER SET utf8mb4;
+
+
+ALTER TABLE `report_stop_segment` CONVERT TO CHARACTER SET utf8mb4;
+ALTER TABLE `report_stop_segment_01` CONVERT TO CHARACTER SET utf8mb4;
+ALTER TABLE `report_stop_segment_02` CONVERT TO CHARACTER SET utf8mb4;
+ALTER TABLE `report_stop_segment_03` CONVERT TO CHARACTER SET utf8mb4;
+ALTER TABLE `report_stop_segment_04` CONVERT TO CHARACTER SET utf8mb4;
+ALTER TABLE `report_stop_segment_05` CONVERT TO CHARACTER SET utf8mb4;
+ALTER TABLE `report_stop_segment_06` CONVERT TO CHARACTER SET utf8mb4;
+ALTER TABLE `report_stop_segment_07` CONVERT TO CHARACTER SET utf8mb4;
+ALTER TABLE `report_stop_segment_08` CONVERT TO CHARACTER SET utf8mb4;
+ALTER TABLE `report_stop_segment_09` CONVERT TO CHARACTER SET utf8mb4;
+ALTER TABLE `report_stop_segment_10` CONVERT TO CHARACTER SET utf8mb4;
+ALTER TABLE `report_stop_segment_11` CONVERT TO CHARACTER SET utf8mb4;
+ALTER TABLE `report_stop_segment_12` CONVERT TO CHARACTER SET utf8mb4;
+
+
+ALTER TABLE `report_track_segment` CONVERT TO CHARACTER SET utf8mb4;
+ALTER TABLE `report_track_segment_01` CONVERT TO CHARACTER SET utf8mb4;
+ALTER TABLE `report_track_segment_02` CONVERT TO CHARACTER SET utf8mb4;
+ALTER TABLE `report_track_segment_03` CONVERT TO CHARACTER SET utf8mb4;
+ALTER TABLE `report_track_segment_04` CONVERT TO CHARACTER SET utf8mb4;
+ALTER TABLE `report_track_segment_05` CONVERT TO CHARACTER SET utf8mb4;
+ALTER TABLE `report_track_segment_06` CONVERT TO CHARACTER SET utf8mb4;
+ALTER TABLE `report_track_segment_07` CONVERT TO CHARACTER SET utf8mb4;
+ALTER TABLE `report_track_segment_08` CONVERT TO CHARACTER SET utf8mb4;
+ALTER TABLE `report_track_segment_09` CONVERT TO CHARACTER SET utf8mb4;
+ALTER TABLE `report_track_segment_10` CONVERT TO CHARACTER SET utf8mb4;
+ALTER TABLE `report_track_segment_11` CONVERT TO CHARACTER SET utf8mb4;
+ALTER TABLE `report_track_segment_12` CONVERT TO CHARACTER SET utf8mb4;
+
+
+更改字段的
+
+ALTER TABLE `report_stop_segment_02` MODIFY addr VARCHAR(500) CHARACTER SET utf8mb4;
+ALTER TABLE `report_stop_segment_03` MODIFY addr VARCHAR(500) CHARACTER SET utf8mb4;
+ALTER TABLE `report_stop_segment_04` MODIFY addr VARCHAR(500) CHARACTER SET utf8mb4;
+ALTER TABLE `report_stop_segment_05` MODIFY addr VARCHAR(500) CHARACTER SET utf8mb4;
+ALTER TABLE `report_track_segment_01` MODIFY STARTADDR VARCHAR(500) CHARACTER SET utf8mb4;
+ALTER TABLE `report_track_segment_02` MODIFY STARTADDR VARCHAR(500) CHARACTER SET utf8mb4;
+ALTER TABLE `report_track_segment_03` MODIFY STARTADDR VARCHAR(500) CHARACTER SET utf8mb4;
+ALTER TABLE `report_track_segment_04` MODIFY STARTADDR VARCHAR(500) CHARACTER SET utf8mb4;
+ALTER TABLE `report_track_segment_05` MODIFY STARTADDR VARCHAR(500) CHARACTER SET utf8mb4;
+ALTER TABLE `report_track_segment_11` MODIFY STARTADDR VARCHAR(500) CHARACTER SET utf8mb4;
+ALTER TABLE `report_track_segment_12` MODIFY STARTADDR VARCHAR(500) CHARACTER SET utf8mb4;
+ALTER TABLE `report_track_segment_01` MODIFY ENDADDR VARCHAR(500) CHARACTER SET utf8mb4;
+ALTER TABLE `report_track_segment_02` MODIFY ENDADDR VARCHAR(500) CHARACTER SET utf8mb4;
+ALTER TABLE `report_track_segment_03` MODIFY ENDADDR VARCHAR(500) CHARACTER SET utf8mb4;
+ALTER TABLE `report_track_segment_04` MODIFY ENDADDR VARCHAR(500) CHARACTER SET utf8mb4;
+ALTER TABLE `report_track_segment_05` MODIFY ENDADDR VARCHAR(500) CHARACTER SET utf8mb4;
+ALTER TABLE `report_track_segment_11` MODIFY ENDADDR VARCHAR(500) CHARACTER SET utf8mb4;
+ALTER TABLE `report_track_segment_12` MODIFY ENDADDR VARCHAR(500) CHARACTER SET utf8mb4;
+
+
+
+
+
