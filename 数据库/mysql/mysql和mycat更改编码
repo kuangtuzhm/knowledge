@@ -30,6 +30,7 @@ systemctl restart mysqld
 最后，将数据库连接语句url中去掉characterEncoding;重启项目。
 
 
+<<<<<<< HEAD
 更改表的
 ALTER TABLE `report_overspeed_segment_01` CONVERT TO CHARACTER SET utf8mb4;
 ALTER TABLE `report_overspeed_segment_02` CONVERT TO CHARACTER SET utf8mb4;
@@ -95,6 +96,14 @@ ALTER TABLE `report_track_segment_04` MODIFY ENDADDR VARCHAR(500) CHARACTER SET 
 ALTER TABLE `report_track_segment_05` MODIFY ENDADDR VARCHAR(500) CHARACTER SET utf8mb4;
 ALTER TABLE `report_track_segment_11` MODIFY ENDADDR VARCHAR(500) CHARACTER SET utf8mb4;
 ALTER TABLE `report_track_segment_12` MODIFY ENDADDR VARCHAR(500) CHARACTER SET utf8mb4;
+=======
+//这个是查看和修改字符集的
+https://www.cnblogs.com/yangmingxianshen/p/7999428.html
+
+
+
+
+>>>>>>> branch 'master' of https://github.com/kuangtuzhm/knowledge.git
 
 
 
