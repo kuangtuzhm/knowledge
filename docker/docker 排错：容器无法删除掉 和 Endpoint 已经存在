@@ -1,0 +1,41 @@
+https://blog.csdn.net/meandmyself/article/details/105046793
+
+一、处理步骤1：删除容器，重新创建
+1、删除容器
+
+docker stop mysql
+docker rm mysql
+没有提示错误消息；但是在message日志文件中，提示“container kill failed because of 'container not found' or 'no such process”。再次使用docker ps 命令检查，发现 mysql 工程容器还是存在。
+
+2、强制删除容器
+
+docker rm -f 73cfe6fcb8aa
+
+3、重新创建容器（失败报错 ）
+
+docker run -d --name=mysql mysql
+报错消息：
+/usr/bin/docker-current: Error response from daemon: service endpoint with name mysql already exists。
+
+二、处理步骤2：删除Endpoint,新建容器
+Endpoint 可以理解为虚拟网卡，是成对存在的；一端连接在容器内部的网络沙盒，一端连接docker 服务的网络驱动模式(可以理解为虚拟交换机)。
+
+1、首先我们要确定当前主机中有几种交换机。
+
+docker network ls
+
+2、确定 Endpoint 是创建在哪个交换机上
+
+docker network inspect host(network_name) |grep "container_name"
+
+3、断开网络交换机和容器的连接
+
+docker network disconnect --force host(network_name) mysql(container_name)
+
+4、重新创建容器（成功）
+
+docker run -d --name=mysql mysql
+
+三、原因分析
+在 Github 上找到了一些关于这个问题的说明，这个问题应该是 Docker服务的一个bug;可以重启一下 Docker 服务暂时解决。
+如果要彻底解决请将 Docker 服务的版本升级到1.18以上。
