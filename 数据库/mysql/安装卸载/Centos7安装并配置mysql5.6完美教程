@@ -1,5 +1,4 @@
-https://www.cnblogs.com/lunatic-cto/p/6123490.html
-
+https://www.cnblogs.com/yyxianren/articles/10710021.html
 
 cp support-files/mysql.server /etc/init.d/mysqld 
 之后修改其中的
