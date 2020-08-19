@@ -1,0 +1,11 @@
+ 查看有哪些stack任务
+docker stack ls
+
+查看docker服务
+docker service ls
+
+删除
+docker stack rm jimi-stack
+
+启动
+docker stack deploy -c docker-compose.yml --resolve-image=never jimi-stack
