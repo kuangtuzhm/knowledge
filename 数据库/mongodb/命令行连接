@@ -1,0 +1,5 @@
+./mongo -u tracker -p jimimongo@123456 admin
+
+use tracker;
+
+db.getCollection('gps').find({"_id":"353701096449422"})
