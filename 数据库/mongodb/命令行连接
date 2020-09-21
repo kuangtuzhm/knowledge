@@ -2,4 +2,10 @@
 
 use tracker;
 
-db.getCollection('gps').find({"_id":"353701096449422"})
+db.getCollection('gps').find({"_id":"351510090130801"})
+
+db.getCollection('gps_test').find({"_id":"351510090130801"})
+
+db.getCollection('gps_test').find({}).count();
+
+db.getCollection('gps').find({}).count();

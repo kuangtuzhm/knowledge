@@ -1,1 +1,7 @@
 https://www.cnblogs.com/wangzun/p/6889247.html
+
+
+导入
+./mysql -u root -p < /data/soft/tmp/imeimoveus.sql
+
+./mysql -u root -p test < /data/soft/tmp/displacement_alarm.sql
