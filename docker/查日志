@@ -2,3 +2,5 @@ docker container ps -a | grep paas-simple
 
 docker exec -it  容器id /bin/bash 就进容器了  
 docker exec -it 66566cb97eca /bin/bash
+
+docker exec -it 22218f009555 /bin/bash
