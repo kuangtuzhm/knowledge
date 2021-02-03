@@ -1,0 +1,3 @@
+./mongoexport -h dds-wz994eaaecf43fe42.mongodb.rds.aliyuncs.com --port 3717 -u root -p Hjdiuyg5 --authenticationDatabase=admin -d tracker -c gps -q '{$or:[{"allFullId":/^1,12871,13366,13273,12979,331504,/},{"userId": "331504"}]}' -o test.json
+
+./mongoimport -h 172.16.10.113 --port 27017 -u root -p jimi@123 --authenticationDatabase=admin -d tracker -c gps --upsert  文件名

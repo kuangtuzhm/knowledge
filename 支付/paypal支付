@@ -8,3 +8,10 @@ https://gitee.com/lemon_wan/paypal/blob/master/paypal.md
 
 V2
 https://github.com/paypal/Checkout-Java-SDK
+
+进行设置
+https://developer.paypal.com/developer/dashboard/sandbox/
+http://120.237.87.194:8890/   开发测试地址，映射的172.16.10.112
+
+https://blog.csdn.net/change_on/article/details/73881791
+到https://www.sandbox.paypal.com 登录测试账号看看余额有没有变化
