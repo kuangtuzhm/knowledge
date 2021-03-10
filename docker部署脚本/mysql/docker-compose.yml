@@ -1,0 +1,17 @@
+version: '3'
+services:
+  mysql:
+    container_name: mysql
+    restart: always
+    image: mysql:5.6
+    ports:
+      - 3306:3306
+    volumes:
+      - ./conf:/etc/mysql/conf.d
+      - ./conf:/etc/mysql/mysql.conf.d
+      - ./sql:/docker-entrypoint-initdb.d
+      - /data/data/mysql/data:/data/data/mysql/data
+      - /data/data/mysql/log:/data/data/mysql/log
+    environment:
+      MYSQL_ROOT_PASSWORD: jimi@123
+      MYSQL_ROOT_HOST: '%'

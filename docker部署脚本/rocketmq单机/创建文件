@@ -1,0 +1,5 @@
+https://blog.csdn.net/qq_37470552/article/details/114083184
+
+
+
+mkdir -p /home/rocketmq/{broker/conf,broker/logs,broker/store,console/logs,namesrv/logs}

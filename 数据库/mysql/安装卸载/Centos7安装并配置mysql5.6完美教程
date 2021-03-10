@@ -4,3 +4,6 @@ cp support-files/mysql.server /etc/init.d/mysqld
 之后修改其中的
 basedir=/data/soft/mysql
 datadir=/home/data/mysql/data
+
+//初始化
+./scripts/mysql_install_db --user=mysql --basedir=/data/soft/mysql --datadir=/data/data/mysql/data
