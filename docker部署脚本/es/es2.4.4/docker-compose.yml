@@ -1,0 +1,27 @@
+version: '2.2'
+services:
+  elasticsearch:
+    image: elasticsearch:2.4.4
+    container_name: elasticsearch
+    restart: always
+    environment:
+      - cluster.name=my-application
+      - bootstrap.memory_lock=true
+      - discovery.type=single-node
+      - http.cors.enabled=true
+      - http.cors.allow-origin=*
+      - "ES_JAVA_OPTS=-Xms2G -Xmx2G"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - /data/data/esdocker/data:/usr/share/elasticsearch/data
+      - /data/data/esdocker/logs:/usr/share/elasticsearch/logs
+      - ./plugins:/usr/share/elasticsearch/plugins
+      - ./elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      #- ./log4j2.properties:/usr/share/elasticsearch/config/log4j2.properties
+      #- ./elasticsearch-sql-6.8.6.0.zip:/usr/share/elasticsearch/elasticsearch-sql-6.8.6.0.zip
+    ports:
+      - 9200:9200
+      - 9300:9300

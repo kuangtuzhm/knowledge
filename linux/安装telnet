@@ -3,7 +3,7 @@
 若无输入内容，则表示没有安装。出于安全考虑telnet-server.rpm是默认没有安装的，而telnet的客户端是标配。即下面的软件是默认安装的。
 
 2、若未安装，则安装telnet-server，否则忽略此步骤　　
-[root@localhost ~]#yum install telnet-server 　
+[root@localhost ~]#yum install telnet-server
 
 3、检测telnet-server的rpm包是否安装　　
 

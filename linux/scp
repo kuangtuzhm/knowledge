@@ -18,3 +18,5 @@ up
 
 scp /opt/soft/test.tar.gz root@ip地址:/opt/soft/test
 scp -r   本地文件或文件夹   用户名@IP地址:服务器目录。不是文件夹可去掉  -r。
+
+scp /mnt/sdc/soft/docker.tar.gz centos@146.59.231.99:/home/centos
