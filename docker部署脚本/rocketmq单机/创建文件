@@ -1,5 +1,15 @@
-https://blog.csdn.net/qq_37470552/article/details/114083184
+mkdir -p  /data/data/rocketmq/logs/nameserver-a
+mkdir -p  /data/data/rocketmq/logs/nameserver-b
+mkdir -p /data/data/rocketmq/store/nameserver-a
+mkdir -p /data/data/rocketmq/store/nameserver-b
+mkdir -p /data/data/rocketmq/logs/broker-a
+mkdir -p /data/data/rocketmq/logs/broker-b
+mkdir -p /data/data/rocketmq/store/broker-a
+mkdir -p /data/data/rocketmq/store/broker-b
+mkdir -p /home/rocketmq/broker-a/
+mkdir -p /home/rocketmq/broker-b/
 
-
-
-mkdir -p /home/rocketmq/{broker/conf,broker/logs,broker/store,console/logs,namesrv/logs}
+创建用户以及授权
+groupadd -g 3000 rocketmq
+useradd -u 3000 -g rocketmq rocketmq
+chown -R rocketmq:rocketmq /data/data/rocketmq

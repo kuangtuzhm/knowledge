@@ -1,7 +1,7 @@
 version: '3.5'
 services:
   rmqnamesrv:
-    image: rocketmqinc/rocketmq
+    image: rocketmqinc/rocketmq:4.4.0
     container_name: rmqnamesrv
     restart: always
     ports:
@@ -10,7 +10,7 @@ services:
     #内存分配
       JAVA_OPT_EXT: "-server -Xms1g -Xmx1g"
     volumes:
-      - /home/rocketmq/namesrv/logs:/root/logs
+      - /data/data/rocketmq/namesrv/logs:/home/rocketmq/logs
     command: sh mqnamesrv
     networks:
       rmq:
@@ -18,7 +18,7 @@ services:
           - rmqnamesrv
           
   rmqbroker:
-    image: rocketmqinc/rocketmq
+    image: rocketmqinc/rocketmq:4.4.0
     container_name: rmqbroker
     restart: always
     depends_on:
@@ -27,13 +27,17 @@ services:
       - 10909:10909
       - 10911:10911
     volumes:
-      - /home/rocketmq/broker/logs:/root/logs
-      - /home/rocketmq/broker/store:/root/store
-      - /home/rocketmq/broker/conf/broker.conf:/opt/rocketmq-4.4.0/conf/broker.conf
-    command: sh mqbroker  -c /opt/rocketmq-4.4.0/conf/broker.conf
+      - /data/data/rocketmq/broker/logs:/home/rocketmq/logs
+      - /data/data/rocketmq/broker/store:/home/rocketmq/store
+      - ./conf/broker.conf:/opt/rocketmq-4.4.0/conf/broker.conf
+    command: sh mqbroker  -c /opt/rocketmq-4.4.0/conf/broker.conf autoCreateTopicEnable=true &
     environment:
-      NAMESRV_ADDR: "rmqnamesrv:9876"
-      JAVA_OPT_EXT: "-server -Xms1g -Xmx1g -Xmn1g"
+        TZ: Asia/Shanghai
+        NAMESRV_ADDR: "rmqnamesrv:9876"
+        JAVA_OPTS: " -Duser.home=/opt"
+        JAVA_OPT_EXT: "-server -Xms1g -Xmx1g -Xmn1g"
+    links:
+      - rmqnamesrv:rmqnamesrv
     networks:
       rmq:
         aliases:
@@ -49,7 +53,7 @@ services:
       - rmqnamesrv
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - /home/rocketmq/console/logs:/root/logs
+      - /data/data/rocketmq/console/logs:/root/logs
     environment:
       JAVA_OPTS: "-Drocketmq.namesrv.addr=rmqnamesrv:9876 -Dcom.rocketmq.sendMessageWithVIPChannel=false"
     networks:
