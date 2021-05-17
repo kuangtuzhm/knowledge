@@ -15,3 +15,7 @@ http://120.237.87.194:8890/   开发测试地址，映射的172.16.10.112
 
 https://blog.csdn.net/change_on/article/details/73881791
 到https://www.sandbox.paypal.com 登录测试账号看看余额有没有变化
+
+设置ipn即时消息
+https://www.sandbox.paypal.com/businessmanage/account/notifications
+或者到https://www.sandbox.paypal.com登陆business用户，然后再用户名字那个地方的account settings下

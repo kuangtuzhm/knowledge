@@ -10,7 +10,7 @@ kafka接收消息
 查看消费信息
 bin/kafka-consumer-offset-checker.sh --zookeeper 127.0.0.1:2181 --topic topic.gps --group analyse139
 查看消费信息--新版本
-bin/kafka-consumer-groups.sh --bootstrap-server 172.16.10.113:9092 --describe --group analyseonline --new-consumer
+bin/kafka-consumer-groups.sh --bootstrap-server 172.26.10.113:9092 --describe --group analysetest --new-consumer
 bin/kafka-consumer-groups.sh --bootstrap-server 172.16.0.125:9092 --describe --group analyse-124 --new-consumer
 bin/kafka-consumer-groups.sh --bootstrap-server 172.16.10.104:9092 --describe --group analyse25 --new-consumer
 海螺水泥

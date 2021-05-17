@@ -1,0 +1,17 @@
+修改docker-compose.yml文件,把配置中的路径改为对应路径并建立日志或者data数据的文件夹，用来挂载
+
+1:rocketmq:   如果没有外部访问，所有访问rocketmq的程序都部署在同一个stack下，那么不需要修改broker.conf文件
+    如果有不在stack下的程序要访问，那么需要修改broker.conf文件的brokerIP1 = 172.26.10.125.也就是需要指定broker绑定
+    的服务器ip为宿主机的ip，否则nameserver返回的ip是docker的内网ip，其它机器就访问不到
+2:redis改密码，修改 conf/redis/redis.conf  默认jimi@123
+3:mongodb 配置文件：./conf/mongo/init-mongo.js  默认用户名密码tracker/jimimongo@123456  root/jimimongo@123456
+4:es:配置文件./conf/es/elasticsearch.yml 注意需要创建模板
+5:cassandra:
+     配置文件./conf/cassandra/cassandra.yaml。不需要修改
+     需要运行创建keyspace的sql语句和创建root用户
+6:mysql:
+     默认root/jimi@123
+7:mycat
+8:kafka:
+  docker-compose.yml 这个配置要改为宿主机ip    
+  KAFKA_ADVERTISED_HOST_NAME: 172.26.10.125   ## 修改:宿主机IP
